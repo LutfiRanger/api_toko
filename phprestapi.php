@@ -86,7 +86,7 @@ require_once "connection.php";
          header('Content-Type: application/json');
          echo json_encode($response);
       }
-   function update_produks()
+   function update_produk()
       {
          global $connect;
          if (!empty($_GET["id"])) {
@@ -96,7 +96,7 @@ require_once "connection.php";
          $check_match = count(array_intersect_key($_POST, $check));         
          if($check_match == count($check)){
          
-              $result = mysqli_query($connect, "UPDATE produks SET               
+              $result = mysqli_query($connect, "UPDATE produk SET               
                kode_produk = '$_POST[kode_produk]',
                nama_produk = '$_POST[nama_produk]',
                harga = '$_POST[harga]' WHERE id = $id");
